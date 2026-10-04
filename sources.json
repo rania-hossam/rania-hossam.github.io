@@ -1,0 +1,118 @@
+{
+  "verifiedOn": "2026-10-04",
+  "profile": {
+    "scholar": "https://scholar.google.com/citations?user=ic1jai8AAAAJ&hl=en&pagesize=100",
+    "linkedin": "https://ae.linkedin.com/in/rania-hossam55",
+    "verification": "All 24 Scholar entries reviewed. Seven first- or second-author papers and six accepted conference/proceedings papers with Rania listed third or fourth are selected. The sole-authored master’s thesis is displayed separately. Scholar confirms Ph.D. student at MBZUAI and the stated research interests; an exact LinkedIn job title was unavailable, so none is asserted."
+  },
+  "designReference": "https://ahmedheakl.github.io/",
+  "portrait": {
+    "source": "https://mbzuai.ac.ae/news-events/commencement-ceremonies/commencement-2026",
+    "asset": "https://mbzuai.ac.ae/content/media/styles/1_1_small/public/2026-07/rania-hossam-elbadry.jpg?itok=jGmZ5LH1",
+    "attribution": "MBZUAI Class of 2026 profile photograph, captioned Rania Hossam Elbadry."
+  },
+  "papers": {
+    "geometry": {
+      "authorPosition": 1,
+      "paper": "https://arxiv.org/abs/2605.09195",
+      "venueEvidence": "Google Scholar and author's LinkedIn announcement: NeurIPS 2026.",
+      "figure": "https://arxiv.org/html/2605.09195v1#S1.F2",
+      "figureLabel": "Figure 2 · The geometry of temporal knowledge drift"
+    },
+    "frames": {
+      "authorPosition": 1,
+      "paper": "https://arxiv.org/abs/2609.00999",
+      "venueEvidence": "arXiv comments and Scholar: Findings of EMNLP 2026.",
+      "figure": "https://arxiv.org/html/2609.00999v1#S3.F2",
+      "emailEvidence": "https://arxiv.org/html/2609.00999v1",
+      "figureLabel": "Figure 2 · Benchmark construction"
+    },
+    "sahm": {
+      "authorPosition": 1,
+      "paper": "https://aclanthology.org/2026.acl-long.1593/",
+      "venueEvidence": "Final ACL Anthology proceedings; Oral status recorded on user's Scholar profile.",
+      "figure": "https://arxiv.org/html/2604.19098v1#S1.F2",
+      "figureLabel": "Figure 2 · From standards to verified questions"
+    },
+    "finmmeval": {
+      "authorPosition": 2,
+      "paper": "https://arxiv.org/abs/2602.10886",
+      "publisher": "https://link.springer.com/chapter/10.1007/978-3-032-21321-1_37",
+      "figure": "https://arxiv.org/html/2602.10886v1#S2.T1",
+      "figureLabel": "Table 1 · Languages and evaluation tasks"
+    },
+    "yapo": {
+      "authorPosition": 2,
+      "paper": "https://arxiv.org/abs/2601.08441",
+      "venueEvidence": "User's Scholar profile: AACL 2026 [Findings].",
+      "figure": "https://arxiv.org/html/2601.08441v1#S1.F1",
+      "figureLabel": "Figure 1 · Sparse activation steering"
+    },
+    "culture": {
+      "authorPosition": 2,
+      "paper": "https://aclanthology.org/2025.findings-emnlp.247/",
+      "authorName": "Final ACL record uses Rania Elbadry; earlier arXiv record uses Rania Hossam.",
+      "figure": "https://arxiv.org/html/2509.19265v1#S0.F2",
+      "figureLabel": "Figure 2 · Alignment and evaluation"
+    },
+    "aquaculture": {
+      "authorPosition": 1,
+      "paper": "https://arxiv.org/abs/2409.08695",
+      "publisher": "https://www.scitepress.org/Papers/2024/129951/129951.pdf",
+      "venueEvidence": "ICINCO 2024; proceedings copyright 2025 does not change conference year.",
+      "figure": "https://arxiv.org/html/2409.08695v1#S3.F3",
+      "figureLabel": "Figure 3 · Aquaculture system architecture"
+    },
+    "finreporting": {
+      "authorPosition": 3,
+      "paper": "https://aclanthology.org/2026.acl-demo.71/",
+      "figure": "https://aclanthology.org/2026.acl-demo.71.pdf#page=4",
+      "figureLabel": "Figure 3 · Financial reporting workflow",
+      "acceptanceEvidence": "https://aclanthology.org/2026.acl-demo.71/"
+    },
+    "poetry": {
+      "authorPosition": 4,
+      "paper": "https://aclanthology.org/2026.findings-acl.1931/",
+      "figure": "https://aclanthology.org/2026.findings-acl.1931.pdf#page=1",
+      "figureLabel": "Figure 1 · Instructions for Arabic poetry",
+      "acceptanceEvidence": "https://aclanthology.org/2026.findings-acl.1931/"
+    },
+    "finmmeval-overview": {
+      "authorPosition": 3,
+      "paper": "https://link.springer.com/chapter/10.1007/978-3-032-39150-6_27",
+      "figure": "",
+      "figureLabel": "",
+      "acceptanceEvidence": "https://link.springer.com/chapter/10.1007/978-3-032-39150-6_27",
+      "figureUnavailableReason": "The Springer chapter is verified, but its original PDF and numbered figures were not publicly retrievable; retain a text-only publication row."
+    },
+    "finmmeval-task1": {
+      "authorPosition": 3,
+      "paper": "https://arxiv.org/abs/2607.19856",
+      "figure": "https://arxiv.org/pdf/2607.19856#page=3",
+      "figureLabel": "Table 1 · Multilingual evaluation data",
+      "acceptanceEvidence": "https://clef-staging.pages.dev/paper184.pdf"
+    },
+    "kitab": {
+      "authorPosition": 4,
+      "paper": "https://aclanthology.org/2025.findings-acl.1135/",
+      "figure": "https://aclanthology.org/2025.findings-acl.1135.pdf#page=2",
+      "figureLabel": "Figure 2 · Arabic document understanding tasks",
+      "acceptanceEvidence": "https://aclanthology.org/2025.findings-acl.1135/"
+    },
+    "arzen": {
+      "authorPosition": 4,
+      "paper": "https://doi.org/10.1016/j.procs.2024.10.184",
+      "figure": "https://arxiv.org/pdf/2406.18120#page=6",
+      "figureLabel": "Figure 1 · Model training comparisons",
+      "acceptanceEvidence": "https://www.sciencedirect.com/science/article/pii/S1877050924029855"
+    }
+  },
+  "thesis": {
+    "source": "https://irep.mbzuai.ac.ae/items/b2a3ce36-847b-488b-a453-96e476eecca8",
+    "author": "Rania Hossam Elmohamady Elbadry",
+    "degree": "M.S., Natural Language Processing, MBZUAI, 2026",
+    "supervisor": "Preslav Nakov"
+  },
+  "selectionPolicy": "Listed author positions 1 or 2; positions 3 or 4 only with verified conference/proceedings acceptance. Later author positions and third/fourth-author preprints without confirmed acceptance are excluded. No citation statistics are copied.",
+  "figures": "Original figures or tables reproduced from the author’s papers. Labels identify figure/table numbers, and the viewer links to the original source. No scientific result or diagram is AI-generated. Figures retain the rights and attribution of their respective publications."
+}
