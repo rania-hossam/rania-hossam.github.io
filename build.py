@@ -1,6 +1,7 @@
 """Regenerate static HTML and citations after editing publications.json or template.html."""
 import argparse
 import html
+import hashlib
 import json
 from itertools import groupby
 from pathlib import Path
@@ -67,20 +68,21 @@ def render_paper(paper):
       </figure>'''
     authors = ", ".join(f'<strong>{escape(name)}</strong>' if name in ALIASES else escape(name) for name in paper["authors"])
     award = f'<span class="highlight">{escape(paper["highlight"])}</span>' if paper.get("highlight") else ""
-    links = [external(paper["paper"], "Paper ↗")]
+    links = [external(paper["paper"], "Paper")]
     if paper.get("pdf"):
         links.append(external(paper["pdf"], "PDF"))
     links += [external(link["url"], escape(link["label"])) for link in paper["links"]]
-    links += [f'<button type="button" class="cite-button" data-cite="{paper["id"]}" aria-label="BibTeX for {escape(paper["title"])}" hidden>BibTeX</button>']
+    links_html = ' <span class="link-separator" aria-hidden="true">/</span> '.join(links)
+    links_html += f' <span class="link-separator cite-separator" aria-hidden="true" hidden>/</span> <button type="button" class="cite-button" data-cite="{paper["id"]}" aria-label="BibTeX for {escape(paper["title"])}" hidden>BibTeX</button>'
     css = "publication" if figure else "publication publication-text-only"
     return f'''<article id="paper-{paper['id']}" class="{css}" data-author-position="{positions[0]}" aria-labelledby="title-{paper['id']}">
       {figure}
       <div class="paper-content">
-        <div class="paper-meta"><span class="venue">{escape(paper['venue'])}</span>{award}<span class="author-position">{AUTHOR_LABELS[positions[0]]} author</span></div>
         <h3 id="title-{paper['id']}">{external(paper['paper'], escape(paper['title']))}</h3>
         <p class="authors">{authors}</p>
+        <div class="paper-meta"><span class="venue">{escape(paper['venue'])}</span>{award}<span class="author-position">{AUTHOR_LABELS[positions[0]]} author</span></div>
+        <div class="paper-links">{links_html}</div>
         <p class="paper-description">{escape(paper['summary'])}</p>
-        <div class="paper-links">{' '.join(links)}</div>
       </div>
     </article>'''
 
@@ -102,6 +104,8 @@ if site_url:
                 f'  <meta property="og:image" content="{escape(site_url)}/assets/portrait.jpg">\n'
                 f'  <script type="application/ld+json">{json.dumps(person, ensure_ascii=False).replace("<", chr(92) + "u003c")}</script>')
 page = template.replace("<!-- PUBLICATIONS -->", "\n".join(sections)).replace("<!-- CITATIONS -->", json.dumps(citations, ensure_ascii=False).replace("<", "\\u003c")).replace("<!-- SITE_METADATA -->", metadata).replace("{{PAPER_COUNT}}", str(len(PUBLICATIONS)))
+for placeholder, asset in (("{{STYLE_VERSION}}", "styles.css"), ("{{SCRIPT_VERSION}}", "script.js")):
+    page = page.replace(placeholder, hashlib.sha256((ROOT / "dist" / asset).read_bytes()).hexdigest()[:12])
 (ROOT / "dist/index.html").write_text("\n".join(line.rstrip() for line in page.splitlines()) + "\n")
 (ROOT / "dist/publications.bib").write_text("\n\n".join(citation(p) for p in PUBLICATIONS) + "\n")
 (ROOT / "dist/.nojekyll").touch()

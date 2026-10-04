@@ -114,5 +114,26 @@
     "supervisor": "Preslav Nakov"
   },
   "selectionPolicy": "Listed author positions 1 or 2; positions 3 or 4 only with verified conference/proceedings acceptance. Later author positions and third/fourth-author preprints without confirmed acceptance are excluded. No citation statistics are copied.",
-  "figures": "Original figures or tables reproduced from the author’s papers. Labels identify figure/table numbers, and the viewer links to the original source. No scientific result or diagram is AI-generated. Figures retain the rights and attribution of their respective publications."
+  "figures": "Original figures or tables reproduced from the author’s papers. Labels identify figure/table numbers, and the viewer links to the original source. No scientific result or diagram is AI-generated. Figures retain the rights and attribution of their respective publications.",
+  "designNotes": "Direct visual review of Ahmed Heakl’s desktop and mobile site on 2026-10-04. Independent semantic HTML/CSS implementation follows its navy header, system typography, white page, right-hand portrait, figure-left publication rows, blue links, italic amber venue labels, and simple News list.",
+  "news": {
+    "source": "https://ahmedheakl.github.io/#news",
+    "events": [
+      {
+        "paper": "geometry",
+        "month": "2026-09",
+        "acceptance": "NeurIPS 2026"
+      },
+      {
+        "paper": "frames",
+        "month": "2026-08",
+        "acceptance": "Findings of EMNLP 2026"
+      },
+      {
+        "paper": "sahm",
+        "month": "2026-04",
+        "acceptance": "ACL 2026 (Oral)"
+      }
+    ]
+  }
 }

@@ -34,6 +34,7 @@ const citationText = document.querySelector("#citation-text");
 const copyStatus = document.querySelector("#copy-status");
 
 if (typeof dialog.showModal === "function") {
+  document.querySelectorAll(".cite-separator").forEach(separator => { separator.hidden = false; });
   document.querySelectorAll(".cite-button").forEach(button => {
     button.hidden = false;
     button.addEventListener("click", () => {
@@ -76,6 +77,18 @@ if (typeof figureDialog.showModal === "function") {
   });
 }
 setupDialogClose(figureDialog);
+
+const backToTop = document.querySelector(".back-to-top");
+const updateBackToTop = () => { backToTop.hidden = window.scrollY < 500; };
+window.addEventListener("scroll", updateBackToTop, { passive:true });
+updateBackToTop();
+
+// News links should also reveal papers that are hidden by an author filter.
+document.querySelectorAll('.news-list a[href^="#paper-"]').forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector('[data-filter="all"]').click();
+  });
+});
 document.querySelector("#copy-citation").addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(citationText.value);

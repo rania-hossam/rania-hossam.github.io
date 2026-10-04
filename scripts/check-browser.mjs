@@ -68,6 +68,11 @@ try {
   await delay(750);
   assert.equal(await evaluate("document.querySelectorAll('.publication').length"), 13);
   assert.equal(await evaluate("document.documentElement.scrollWidth <= innerWidth"), true, 'Desktop must not overflow');
+  assert.equal(await evaluate("getComputedStyle(document.querySelector('.site-header')).backgroundColor"), 'rgb(27, 42, 65)', 'Navy header from the reference');
+  assert.equal(await evaluate("getComputedStyle(document.body).backgroundColor"), 'rgb(255, 255, 255)', 'White academic layout');
+  assert.equal(await evaluate("document.querySelector('.site-title').textContent"), 'Rania Elbadry');
+  assert.equal(await evaluate("document.querySelector('#publications-heading').getBoundingClientRect().top < 700"), true, 'Publications visible near the introduction on desktop');
+  assert.equal(await evaluate("document.querySelector('.portrait-block').getBoundingClientRect().left > document.querySelector('.bio').getBoundingClientRect().right - 1"), true, 'Portrait sits to the right of About me');
   assert.equal(await evaluate("[...document.images].filter(img => img.hasAttribute('src')).every(img => img.complete && img.naturalWidth > 0)"), true, 'Images must load');
   assert.equal(await evaluate("document.querySelector('.paper-image').getBoundingClientRect().width > 420"), true, 'Desktop figures are more than twice the original 206px width');
   assert.equal(await evaluate("document.querySelectorAll('[data-figure]').length"), 12, 'Twelve original figures/tables');
@@ -86,6 +91,9 @@ try {
   assert.equal(await evaluate("[...document.querySelectorAll('.publication')].filter(p => !p.hidden).every(p => ['3','4'].includes(p.dataset.authorPosition))"), true);
   await evaluate("document.querySelector('[data-filter=\"all\"]').click()");
   assert.equal(await visible(), 13);
+  await evaluate("document.querySelector('[data-filter=\"2\"]').click(); document.querySelector('.news-list a[href=\"#paper-geometry\"]').click()");
+  assert.equal(await visible(), 13, 'News reveals a paper hidden by filters');
+  assert.equal(await evaluate("document.querySelector('#paper-geometry').hidden"), false);
   await evaluate("document.querySelector('[data-cite=\"geometry\"]').click()");
   assert.equal(await evaluate("document.querySelector('dialog').open"), true);
   assert.equal(await evaluate("document.querySelector('#citation-text').value.includes('2605.09195')"), true);
@@ -115,6 +123,7 @@ try {
   await evaluate("scrollTo({top:0,behavior:'instant'})");
   await delay(250);
   assert.equal(await evaluate("document.documentElement.scrollWidth <= innerWidth"), true, 'Phone must not overflow');
+  assert.equal(await evaluate("document.querySelector('.portrait-block').getBoundingClientRect().bottom <= document.querySelector('.bio').getBoundingClientRect().top"), true, 'Portrait stacks above biography on mobile');
   await writeFile('/private/tmp/rania-github-mobile.png', Buffer.from((await cdp('Page.captureScreenshot', { format:'png' })).data, 'base64'));
   await evaluate("document.querySelector('#publications').scrollIntoView({behavior:'instant'})");
   await writeFile('/private/tmp/rania-github-mobile-papers.png', Buffer.from((await cdp('Page.captureScreenshot', { format:'png' })).data, 'base64'));

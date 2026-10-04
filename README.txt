@@ -3,8 +3,10 @@ Rania Elbadry — personal academic website
 Website: https://rania-hossam.github.io/
 Repository: https://github.com/rania-hossam/rania-hossam.github.io
 
-A static, responsive website inspired by the academic structure of
-https://ahmedheakl.github.io/, with its own typography, colors, and layout.
+A static, responsive academic website closely following the visual layout of
+https://ahmedheakl.github.io/: a navy header, white background, system fonts,
+About me with a right-hand portrait, and wide figure-first publication rows.
+Rania’s verified biography, publications, news, and thesis are used throughout.
 No framework or package installation is needed to view or edit it.
 
 VIEW LOCALLY
@@ -13,10 +15,10 @@ VIEW LOCALLY
 Then visit http://127.0.0.1:4173. dist/index.html also opens directly.
 
 EDIT
-  template.html      Biography, thesis, contact details, and page structure
+  template.html      Biography, news, thesis, contact details, and page structure
   publications.json Publication metadata, author order, and figure sources
   site.json         Published website URL and repository URL
-  dist/styles.css   Responsive design and large publication figures
+  dist/styles.css   Reference-inspired layout and large publication figures
   dist/script.js    Author filters, figure viewer, and citation dialog
   dist/assets/      Self-hosted portrait, original paper figures, and fonts
   sources.json      Content provenance and publication selection policy
