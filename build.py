@@ -1,4 +1,4 @@
-"""Regenerate static HTML and citations after editing publications.json or template.html."""
+"""Regenerate static HTML after editing publications.json or template.html."""
 import argparse
 import html
 import hashlib
@@ -23,29 +23,6 @@ if site_url:
 
 def external(url, label, css=""):
     return f'<a class="{css}" href="{escape(url, quote=True)}" target="_blank" rel="noopener noreferrer">{label}</a>'
-
-
-def citation(paper):
-    key = f"{paper['authors'][0].split()[-1].lower()}{paper['year']}{paper['id']}"
-    # The stable preprint is a useful citation fallback when full proceedings
-    # metadata is unavailable. DOI-only proceedings are cited directly.
-    if not paper.get("arxiv"):
-        return (f"@inproceedings{{{key},\n"
-                f"  title = {{{{{paper['title']}}}}},\n"
-                f"  author = {{{' and '.join(paper['authors'])}}},\n"
-                f"  booktitle = {{{paper['venue']}}},\n"
-                f"  year = {{{paper['year']}}},\n"
-                f"  doi = {{{paper['doi']}}},\n"
-                f"  url = {{{paper['paper']}}}\n"
-                "}")
-    return (f"@misc{{{key},\n"
-            f"  title = {{{{{paper['title']}}}}},\n"
-            f"  author = {{{' and '.join(paper['authors'])}}},\n"
-            f"  year = {{{paper['year']}}},\n"
-            f"  eprint = {{{paper['arxiv']}}},\n"
-            "  archivePrefix = {arXiv},\n"
-            f"  url = {{https://arxiv.org/abs/{paper['arxiv']}}}\n"
-            "}")
 
 
 def render_paper(paper):
@@ -73,7 +50,6 @@ def render_paper(paper):
         links.append(external(paper["pdf"], "PDF"))
     links += [external(link["url"], escape(link["label"])) for link in paper["links"]]
     links_html = ' <span class="link-separator" aria-hidden="true">/</span> '.join(links)
-    links_html += f' <span class="link-separator cite-separator" aria-hidden="true" hidden>/</span> <button type="button" class="cite-button" data-cite="{paper["id"]}" aria-label="BibTeX for {escape(paper["title"])}" hidden>BibTeX</button>'
     css = "publication" if figure else "publication publication-text-only"
     return f'''<article id="paper-{paper['id']}" class="{css}" data-author-position="{positions[0]}" aria-labelledby="title-{paper['id']}">
       {figure}
@@ -94,7 +70,7 @@ for year, papers in groupby(PUBLICATIONS, key=lambda p: p["year"]):
     articles = "\n".join(render_paper(p) for p in papers)
     sections.append(f'<section class="year-group" aria-label="{year} publications"><div class="year-label"><h3>{year}</h3><span></span></div><div class="year-papers">{articles}</div></section>')
 
-citations = {p["id"]: {"title": p["title"], "bibtex": citation(p), "figureSrc": "./assets/" + p["image"] if p.get("image") else "", "figureAlt": p["imageAlt"], "figureLabel": p["figureLabel"], "figureCaption": p["figureCaption"], "figureSource": p["figureSource"]} for p in PUBLICATIONS}
+figures = {p["id"]: {"title": p["title"], "figureSrc": "./assets/" + p["image"] if p.get("image") else "", "figureAlt": p["imageAlt"], "figureLabel": p["figureLabel"], "figureCaption": p["figureCaption"], "figureSource": p["figureSource"]} for p in PUBLICATIONS}
 template = (ROOT / "template.html").read_text()
 metadata = ""
 if site_url:
@@ -103,10 +79,9 @@ if site_url:
                 f'  <meta property="og:url" content="{escape(site_url)}/">\n'
                 f'  <meta property="og:image" content="{escape(site_url)}/assets/portrait.jpg">\n'
                 f'  <script type="application/ld+json">{json.dumps(person, ensure_ascii=False).replace("<", chr(92) + "u003c")}</script>')
-page = template.replace("<!-- PUBLICATIONS -->", "\n".join(sections)).replace("<!-- CITATIONS -->", json.dumps(citations, ensure_ascii=False).replace("<", "\\u003c")).replace("<!-- SITE_METADATA -->", metadata).replace("{{PAPER_COUNT}}", str(len(PUBLICATIONS)))
+page = template.replace("<!-- PUBLICATIONS -->", "\n".join(sections)).replace("<!-- FIGURES -->", json.dumps(figures, ensure_ascii=False).replace("<", "\\u003c")).replace("<!-- SITE_METADATA -->", metadata).replace("{{PAPER_COUNT}}", str(len(PUBLICATIONS)))
 for placeholder, asset in (("{{STYLE_VERSION}}", "styles.css"), ("{{SCRIPT_VERSION}}", "script.js")):
     page = page.replace(placeholder, hashlib.sha256((ROOT / "dist" / asset).read_bytes()).hexdigest()[:12])
 (ROOT / "dist/index.html").write_text("\n".join(line.rstrip() for line in page.splitlines()) + "\n")
-(ROOT / "dist/publications.bib").write_text("\n\n".join(citation(p) for p in PUBLICATIONS) + "\n")
 (ROOT / "dist/.nojekyll").touch()
 print(f"Built {len(PUBLICATIONS)} selected publications and one separately labeled thesis for {site_url or 'local preview'}.")

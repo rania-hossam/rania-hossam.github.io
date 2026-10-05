@@ -28,24 +28,7 @@ filters.forEach(button => {
   });
 });
 
-const citations = JSON.parse(document.querySelector("#citations-data").textContent);
-const dialog = document.querySelector("#citation-dialog");
-const citationText = document.querySelector("#citation-text");
-const copyStatus = document.querySelector("#copy-status");
-
-if (typeof dialog.showModal === "function") {
-  document.querySelectorAll(".cite-separator").forEach(separator => { separator.hidden = false; });
-  document.querySelectorAll(".cite-button").forEach(button => {
-    button.hidden = false;
-    button.addEventListener("click", () => {
-      const citation = citations[button.dataset.cite];
-      document.querySelector("#citation-title").textContent = citation.title;
-      citationText.value = citation.bibtex;
-      copyStatus.textContent = "";
-      dialog.showModal();
-    });
-  });
-}
+const figures = JSON.parse(document.querySelector("#figures-data").textContent);
 function setupDialogClose(modal) {
   modal.querySelector(".close-dialog").addEventListener("click", () => modal.close());
   modal.addEventListener("click", event => {
@@ -54,7 +37,6 @@ function setupDialogClose(modal) {
     if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) modal.close();
   });
 }
-setupDialogClose(dialog);
 
 const figureDialog = document.querySelector("#figure-dialog");
 if (typeof figureDialog.showModal === "function") {
@@ -63,7 +45,7 @@ if (typeof figureDialog.showModal === "function") {
     link.addEventListener("click", event => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
-      const paper = citations[link.dataset.figure];
+      const paper = figures[link.dataset.figure];
       document.querySelector("#figure-heading").textContent = paper.figureLabel;
       document.querySelector("#figure-paper-title").textContent = paper.title;
       const image = document.querySelector("#expanded-figure");
@@ -88,16 +70,6 @@ document.querySelectorAll('.news-list a[href^="#paper-"]').forEach(link => {
   link.addEventListener("click", () => {
     document.querySelector('[data-filter="all"]').click();
   });
-});
-document.querySelector("#copy-citation").addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText(citationText.value);
-    copyStatus.textContent = "Citation copied.";
-  } catch {
-    citationText.focus();
-    citationText.select();
-    copyStatus.textContent = "Citation selected. Press Ctrl+C or ⌘C to copy.";
-  }
 });
 
 if ("IntersectionObserver" in window) {

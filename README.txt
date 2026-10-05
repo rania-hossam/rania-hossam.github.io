@@ -19,7 +19,7 @@ EDIT
   publications.json Publication metadata, author order, and figure sources
   site.json         Published website URL and repository URL
   dist/styles.css   Reference-inspired layout and large publication figures
-  dist/script.js    Author filters, figure viewer, and citation dialog
+  dist/script.js    Author filters and figure viewer
   dist/assets/      Self-hosted portrait, original paper figures, and fonts
   sources.json      Content provenance and publication selection policy
 
@@ -46,8 +46,8 @@ With Node.js 22+ and Google Chrome installed on macOS:
   node --check dist/script.js
   node scripts/check-browser.mjs
 The browser check uses a temporary profile and loopback server, then
-closes both. It checks author filters, citations, clipboard copying,
-figure enlargement, keyboard dismissal, image loading, responsive layout,
+closes both. It checks author filters, figure enlargement, keyboard dismissal,
+image loading, responsive layout,
 and content without JavaScript. Screenshots go to /private/tmp/rania-github-*.
 
 GITHUB PAGES

@@ -80,6 +80,8 @@ try {
   await writeFile('/private/tmp/rania-github-desktop.png', Buffer.from((await cdp('Page.captureScreenshot', { format:'png' })).data, 'base64'));
   await evaluate("document.querySelector('#publications').scrollIntoView({behavior:'instant'})");
   await writeFile('/private/tmp/rania-github-papers.png', Buffer.from((await cdp('Page.captureScreenshot', { format:'png' })).data, 'base64'));
+  await evaluate("document.querySelector('#news').scrollIntoView({behavior:'instant'})");
+  await writeFile('/private/tmp/rania-github-news.png', Buffer.from((await cdp('Page.captureScreenshot', { format:'png' })).data, 'base64'));
   const visible = () => evaluate("[...document.querySelectorAll('.publication')].filter(p => !p.hidden).length");
   await evaluate("document.querySelector('[data-filter=\"1\"]').click()");
   assert.equal(await visible(), 4, 'First-author filter');
@@ -94,19 +96,6 @@ try {
   await evaluate("document.querySelector('[data-filter=\"2\"]').click(); document.querySelector('.news-list a[href=\"#paper-geometry\"]').click()");
   assert.equal(await visible(), 13, 'News reveals a paper hidden by filters');
   assert.equal(await evaluate("document.querySelector('#paper-geometry').hidden"), false);
-  await evaluate("document.querySelector('[data-cite=\"geometry\"]').click()");
-  assert.equal(await evaluate("document.querySelector('dialog').open"), true);
-  assert.equal(await evaluate("document.querySelector('#citation-text').value.includes('2605.09195')"), true);
-  await cdp('Browser.grantPermissions', { origin, permissions:['clipboardReadWrite','clipboardSanitizedWrite'] });
-  await evaluate("document.querySelector('#copy-citation').click()");
-  await delay(150);
-  assert.equal(await evaluate("document.querySelector('#copy-status').textContent"), 'Citation copied.');
-  await cdp('Input.dispatchKeyEvent', { type:'keyDown', key:'Escape', code:'Escape', windowsVirtualKeyCode:27 });
-  await cdp('Input.dispatchKeyEvent', { type:'keyUp', key:'Escape', code:'Escape', windowsVirtualKeyCode:27 });
-  assert.equal(await evaluate("document.querySelector('dialog').open"), false, 'Escape closes citation');
-  await evaluate("document.querySelector('[data-cite=\"kitab\"]').click()");
-  assert.equal(await evaluate("document.querySelector('#citation-text').value.includes('10.18653/v1/2025.findings-acl.1135')"), true, 'Proceedings DOI citation');
-  await evaluate("document.querySelector('#citation-dialog .close-dialog').click()");
   await evaluate("document.querySelector('[data-figure=\"frames\"]').focus(); document.querySelector('[data-figure=\"frames\"]').click()");
   await evaluate("document.querySelector('#expanded-figure').decode().then(() => true)");
   assert.equal(await evaluate("document.querySelector('#figure-dialog').open"), true, 'Figure viewer opens');
@@ -127,6 +116,8 @@ try {
   await writeFile('/private/tmp/rania-github-mobile.png', Buffer.from((await cdp('Page.captureScreenshot', { format:'png' })).data, 'base64'));
   await evaluate("document.querySelector('#publications').scrollIntoView({behavior:'instant'})");
   await writeFile('/private/tmp/rania-github-mobile-papers.png', Buffer.from((await cdp('Page.captureScreenshot', { format:'png' })).data, 'base64'));
+  await evaluate("document.querySelector('#news').scrollIntoView({behavior:'instant'})");
+  await writeFile('/private/tmp/rania-github-mobile-news.png', Buffer.from((await cdp('Page.captureScreenshot', { format:'png' })).data, 'base64'));
   await evaluate("document.querySelector('[data-figure=\"poetry\"]').click()");
   await evaluate("document.querySelector('#expanded-figure').decode().then(() => true)");
   assert.equal(await evaluate("document.querySelector('#figure-dialog').scrollWidth <= document.querySelector('#figure-dialog').clientWidth"), true, 'Phone figure viewer must not overflow');
@@ -144,7 +135,7 @@ try {
   assert.equal(all.nodeIds.length, 13);
   const figureLinks = await cdp('DOM.querySelectorAll', { nodeId:dom.root.nodeId, selector:'.paper-image[href^="./assets/"]' });
   assert.equal(figureLinks.nodeIds.length, 12, 'Full-size figures work without JavaScript');
-  console.log(JSON.stringify({ status:'passed', publications:13, firstAuthor:4, secondAuthor:3, thirdOrFourthAuthor:6, originalFigures:12, viewports:[1440,768,390,320], checks:['image loading','larger figures','author filters','citation dialog','clipboard copy','figure viewer and source links','Escape dismissal and focus return','responsive overflow','no JavaScript errors','content without JavaScript'], screenshots:['/private/tmp/rania-github-desktop.png','/private/tmp/rania-github-papers.png','/private/tmp/rania-github-figure.png','/private/tmp/rania-github-mobile.png','/private/tmp/rania-github-mobile-papers.png'] }));
+  console.log(JSON.stringify({ status:'passed', publications:13, firstAuthor:4, secondAuthor:3, thirdOrFourthAuthor:6, originalFigures:12, viewports:[1440,768,390,320], checks:['image loading','larger figures','author filters','figure viewer and source links','Escape dismissal and focus return','responsive overflow','no JavaScript errors','content without JavaScript'], screenshots:['/private/tmp/rania-github-desktop.png','/private/tmp/rania-github-papers.png','/private/tmp/rania-github-figure.png','/private/tmp/rania-github-mobile.png','/private/tmp/rania-github-mobile-papers.png'] }));
 } finally {
   socket?.close();
   chrome.kill('SIGTERM');

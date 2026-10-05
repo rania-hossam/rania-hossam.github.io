@@ -117,22 +117,67 @@
   "figures": "Original figures or tables reproduced from the author’s papers. Labels identify figure/table numbers, and the viewer links to the original source. No scientific result or diagram is AI-generated. Figures retain the rights and attribution of their respective publications.",
   "designNotes": "Direct visual review of Ahmed Heakl’s desktop and mobile site on 2026-10-04. Independent semantic HTML/CSS implementation follows its navy header, system typography, white page, right-hand portrait, figure-left publication rows, blue links, italic amber venue labels, and simple News list.",
   "news": {
-    "source": "https://ahmedheakl.github.io/#news",
+    "verifiedOn": "2026-10-05",
+    "policy": "Conference announcements requested by the author. News can include later-author collaborations, independently of the selected-publication author-position criteria.",
     "events": [
       {
-        "paper": "geometry",
-        "month": "2026-09",
-        "acceptance": "NeurIPS 2026"
+        "conference": "NeurIPS 2026",
+        "papers": [
+          "The Geometry of Forgetting"
+        ],
+        "source": "https://ahmedheakl.github.io/#news"
       },
       {
-        "paper": "frames",
-        "month": "2026-08",
-        "acceptance": "Findings of EMNLP 2026"
+        "conference": "EMNLP 2026",
+        "papers": [
+          {
+            "title": "Jais 2: A Family of Arabic-Centric Open Large Language Models",
+            "track": "Main",
+            "paper": "https://arxiv.org/abs/2608.13580"
+          },
+          {
+            "title": "Right Frame, Wrong Rule",
+            "track": "Findings",
+            "paper": "https://arxiv.org/abs/2609.00999"
+          }
+        ],
+        "sources": [
+          "https://ae.linkedin.com/in/rania-hossam55",
+          "https://www.mint-nlp-mbzuai.com/news/emnlp2026-publication"
+        ]
       },
       {
-        "paper": "sahm",
-        "month": "2026-04",
-        "acceptance": "ACL 2026 (Oral)"
+        "conference": "ACL 2026",
+        "papers": [
+          {
+            "title": "FinChain: A Symbolic Benchmark for Verifiable Chain-of-Thought Financial Reasoning",
+            "track": "Main, Oral",
+            "paper": "https://aclanthology.org/2026.acl-long.662/"
+          },
+          {
+            "title": "Instruction-Guided Poetry Generation in Arabic and Its Dialects",
+            "track": "Findings",
+            "paper": "https://aclanthology.org/2026.findings-acl.1931/"
+          },
+          {
+            "title": "SAHM",
+            "track": "Main, Oral",
+            "paper": "https://aclanthology.org/2026.acl-long.1593/"
+          }
+        ],
+        "oralEvidence": "Author confirmation on 2026-10-05 and her Google Scholar profile."
+      },
+      {
+        "conference": "AACL 2026",
+        "papers": [
+          {
+            "title": "YaPO: Learnable Sparse Activation Steering Vectors for Domain Adaptation",
+            "track": "Findings",
+            "paper": "https://arxiv.org/abs/2601.08441"
+          }
+        ],
+        "source": "https://scholar.google.com/citations?user=ic1jai8AAAAJ&hl=en",
+        "verification": "Author confirmation and Scholar venue label: AACL 2026 [Findings]."
       }
     ]
   }
