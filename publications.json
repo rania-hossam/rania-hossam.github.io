@@ -233,6 +233,76 @@
     "imageHeight": 904
   },
   {
+    "id": "docatlas",
+    "title": "DocAtlas: Multilingual Document Understanding Across 80+ Languages",
+    "authors": [
+      "Ahmed Heakl",
+      "Youssef Mohamed",
+      "Abdullah Sohail",
+      "Rania Elbadry",
+      "Ahmed Nassar",
+      "Peter W. J. Staar",
+      "Fahad Shahbaz Khan",
+      "Imran Razzak",
+      "Salman Khan"
+    ],
+    "year": 2026,
+    "venue": "Preprint · 2026",
+    "summary": "Builds document understanding datasets and benchmarks across 82 languages using precise annotations from document rendering, with preference optimization for multilingual adaptation.",
+    "image": "docatlas-pipeline.png",
+    "imageAlt": "DocAtlas pipeline converting original and colorized Word documents into page images, text, layout annotations, and DocTags",
+    "paper": "https://arxiv.org/abs/2605.12623",
+    "pdf": "https://arxiv.org/pdf/2605.12623",
+    "arxiv": "2605.12623",
+    "links": [
+      {
+        "label": "Code",
+        "url": "https://github.com/ahmedheakl/DocAtlas"
+      }
+    ],
+    "accepted": false,
+    "includeByRequest": true,
+    "figureLabel": "Figure 2 · Document annotation pipeline",
+    "figureCaption": "The native-document pipeline compares colorized and original renderings to recover layout, text, and structured DocTag annotations.",
+    "figureSource": "https://arxiv.org/html/2605.12623v2#S3.F2",
+    "imageWidth": 2008,
+    "imageHeight": 668
+  },
+  {
+    "id": "cepo",
+    "title": "CEPO: RLVR Self-Distillation using Contrastive Evidence Policy Optimization",
+    "authors": [
+      "Ahmed Heakl",
+      "Abdelrahman M. Shaker",
+      "Youssef Mohamed",
+      "Rania Elbadry",
+      "Omar Fetouh",
+      "Fahad Shahbaz Khan",
+      "Salman Khan"
+    ],
+    "year": 2026,
+    "venue": "Preprint · 2026",
+    "summary": "Improves reinforcement learning for mathematical reasoning by contrasting correct and incorrect teacher signals to identify the tokens that deserve credit.",
+    "image": "cepo-pipeline.png",
+    "imageAlt": "CEPO training pipeline comparing correct and wrong teacher signals to adjust token-level advantages before updating the policy",
+    "paper": "https://arxiv.org/abs/2605.19436",
+    "pdf": "https://arxiv.org/pdf/2605.19436",
+    "arxiv": "2605.19436",
+    "links": [
+      {
+        "label": "Code",
+        "url": "https://github.com/ahmedheakl/CEPO"
+      }
+    ],
+    "accepted": false,
+    "includeByRequest": true,
+    "figureLabel": "Figure 2 · Contrastive evidence training",
+    "figureCaption": "Correct and rejected rollouts condition two teachers; their contrastive evidence adjusts token-level advantages before the policy update.",
+    "figureSource": "https://arxiv.org/html/2605.19436v1#S3.F2",
+    "imageWidth": 2816,
+    "imageHeight": 1392
+  },
+  {
     "id": "culture",
     "title": "Cross-Cultural Transfer of Commonsense Reasoning in LLMs: Evidence from the Arab World",
     "authors": [

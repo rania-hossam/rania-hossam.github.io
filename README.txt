@@ -27,13 +27,15 @@ After editing the template or publications, regenerate the HTML:
   python3 build.py
 
 The generator checks that Rania is listed first or second, or third/fourth
-with an explicit acceptance evidence URL. The site contains 13 papers:
-four first-author, three second-author, and six third/fourth-author papers.
+with an explicit acceptance evidence URL or an author-requested preprint
+exception. DocAtlas and CEPO are requested exceptions and are labeled Preprint.
+The site contains 15 papers: four first-author, three second-author, and
+eight third/fourth-author papers. The list follows the order in publications.json.
 The master's thesis is displayed separately. Content, paper links, and
 full-size figure links remain usable without JavaScript.
 
 FIGURES
-Twelve publication entries show original figures or tables from their
+Fourteen publication entries show original figures or tables from their
 papers. Click a figure to enlarge it and follow its source link. Selection
 favors readable overviews, methods, or central results. Tables are clearly
 labeled when the paper has no suitable figure. The CLEF overview chapter

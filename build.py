@@ -29,8 +29,11 @@ def render_paper(paper):
     positions = [i + 1 for i, name in enumerate(paper["authors"]) if name in ALIASES]
     assert len(positions) == 1 and positions[0] in AUTHOR_LABELS, f"Ineligible author position: {paper['id']}"
     if positions[0] in (3, 4):
-        assert paper.get("accepted") is True, f"Third/fourth-author paper must have confirmed acceptance: {paper['id']}"
-        assert paper.get("acceptanceSource", "").startswith("https://"), f"Missing acceptance evidence: {paper['id']}"
+        if paper.get("accepted") is True:
+            assert paper.get("acceptanceSource", "").startswith("https://"), f"Missing acceptance evidence: {paper['id']}"
+        else:
+            assert paper.get("includeByRequest") is True, f"Unaccepted third/fourth-author paper must be explicitly requested: {paper['id']}"
+            assert paper["venue"].startswith("Preprint"), f"Requested preprint must be labeled accurately: {paper['id']}"
     urls = [paper["paper"], *[link["url"] for link in paper["links"]]]
     urls += [paper[key] for key in ("pdf", "figureSource") if paper.get(key)]
     for url in urls:

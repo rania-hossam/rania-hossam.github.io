@@ -3,7 +3,7 @@
   "profile": {
     "scholar": "https://scholar.google.com/citations?user=ic1jai8AAAAJ&hl=en&pagesize=100",
     "linkedin": "https://ae.linkedin.com/in/rania-hossam55",
-    "verification": "All 24 Scholar entries reviewed. Seven first- or second-author papers and six accepted conference/proceedings papers with Rania listed third or fourth are selected. The sole-authored master’s thesis is displayed separately. Scholar confirms Ph.D. student at MBZUAI and the stated research interests; an exact LinkedIn job title was unavailable, so none is asserted."
+    "verification": "Scholar entries reviewed against primary publication sources. The selection contains seven first- or second-author papers, six accepted third- or fourth-author papers, and two explicitly requested fourth-author preprints (DocAtlas and CEPO). The sole-authored master’s thesis is displayed separately. Scholar confirms Ph.D. student at MBZUAI and the stated research interests; an exact LinkedIn job title was unavailable, so none is asserted."
   },
   "designReference": "https://ahmedheakl.github.io/",
   "portrait": {
@@ -105,6 +105,30 @@
       "figure": "https://arxiv.org/pdf/2406.18120#page=6",
       "figureLabel": "Figure 1 · Model training comparisons",
       "acceptanceEvidence": "https://www.sciencedirect.com/science/article/pii/S1877050924029855"
+    },
+    "docatlas": {
+      "authorPosition": 4,
+      "paper": "https://arxiv.org/abs/2605.12623",
+      "status": "Preprint; no confirmed conference acceptance identified.",
+      "figure": "https://arxiv.org/html/2605.12623v2#S3.F2",
+      "figureLabel": "Figure 2 · Document annotation pipeline",
+      "selection": "Explicitly requested by the author on 2026-10-05.",
+      "verificationSources": [
+        "https://arxiv.org/abs/2605.12623",
+        "https://github.com/ahmedheakl/DocAtlas"
+      ]
+    },
+    "cepo": {
+      "authorPosition": 4,
+      "paper": "https://arxiv.org/abs/2605.19436",
+      "status": "Preprint; no confirmed conference acceptance identified.",
+      "figure": "https://arxiv.org/html/2605.19436v1#S3.F2",
+      "figureLabel": "Figure 2 · Contrastive evidence training",
+      "selection": "Explicitly requested by the author on 2026-10-05.",
+      "verificationSources": [
+        "https://arxiv.org/abs/2605.19436",
+        "https://github.com/ahmedheakl/CEPO"
+      ]
     }
   },
   "thesis": {
@@ -113,7 +137,7 @@
     "degree": "M.S., Natural Language Processing, MBZUAI, 2026",
     "supervisor": "Preslav Nakov"
   },
-  "selectionPolicy": "Listed author positions 1 or 2; positions 3 or 4 only with verified conference/proceedings acceptance. Later author positions and third/fourth-author preprints without confirmed acceptance are excluded. No citation statistics are copied.",
+  "selectionPolicy": "Listed author positions 1 or 2; positions 3 or 4 require verified conference/proceedings acceptance, except preprints explicitly requested by the author. DocAtlas and CEPO are requested exceptions and are labeled Preprint. No citation statistics are copied.",
   "figures": "Original figures or tables reproduced from the author’s papers. Labels identify figure/table numbers, and the viewer links to the original source. No scientific result or diagram is AI-generated. Figures retain the rights and attribution of their respective publications.",
   "designNotes": "Direct visual review of Ahmed Heakl’s desktop and mobile site on 2026-10-04. Independent semantic HTML/CSS implementation follows its navy header, system typography, white page, right-hand portrait, figure-left publication rows, blue links, italic amber venue labels, and simple News list.",
   "news": {
