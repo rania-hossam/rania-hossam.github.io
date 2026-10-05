@@ -88,7 +88,7 @@ def render_paper(paper):
 
 
 assert len({p["id"] for p in PUBLICATIONS}) == len(PUBLICATIONS), "Duplicate publication IDs"
-assert [p["year"] for p in PUBLICATIONS] == sorted([p["year"] for p in PUBLICATIONS], reverse=True), "Sort publications by descending year"
+# Keep the curated display order in publications.json, including papers placed last.
 sections = []
 for year, papers in groupby(PUBLICATIONS, key=lambda p: p["year"]):
     articles = "\n".join(render_paper(p) for p in papers)

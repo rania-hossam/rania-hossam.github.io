@@ -117,51 +117,6 @@
     "imageHeight": 199
   },
   {
-    "id": "finmmeval",
-    "title": "The CLEF-2026 FinMMEval Lab: Multilingual and Multimodal Evaluation of Financial AI Systems",
-    "authors": [
-      "Zhuohan Xie",
-      "Rania Elbadry",
-      "Fan Zhang",
-      "Georgi Georgiev",
-      "Xueqing Peng",
-      "Lingfei Qian",
-      "Jimin Huang",
-      "Dimitar Dimitrov",
-      "Vanshikaa Jani",
-      "Yuyang Dai",
-      "Jiahui Geng",
-      "Yuxia Wang",
-      "Ivan Koychev",
-      "Veselin Stoyanov",
-      "Preslav Nakov"
-    ],
-    "year": 2026,
-    "venue": "ECIR 2026",
-    "summary": "Shared evaluation tasks for financial AI, spanning question answering, multilingual understanding, and decision making across languages and modalities.",
-    "image": "finmmeval-table.png",
-    "imageAlt": "Original Table 1 showing languages covered by the three FinMMEval tasks",
-    "paper": "https://arxiv.org/abs/2602.10886",
-    "pdf": "https://arxiv.org/pdf/2602.10886",
-    "arxiv": "2602.10886",
-    "doi": "10.1007/978-3-032-21321-1_37",
-    "links": [
-      {
-        "label": "Code",
-        "url": "https://github.com/mbzuai-nlp/CLEF-2026-FinMMEval-Lab"
-      },
-      {
-        "label": "Project",
-        "url": "https://mbzuai-nlp.github.io/CLEF-2026-FinMMEval-Lab/"
-      }
-    ],
-    "figureLabel": "Table 1 · Languages and evaluation tasks",
-    "figureCaption": "The paper contains no figures; its original task-language coverage table is shown here.",
-    "figureSource": "https://arxiv.org/html/2602.10886v1#S2.T1",
-    "imageWidth": 1071,
-    "imageHeight": 285
-  },
-  {
     "id": "yapo",
     "title": "YaPO: Learnable Sparse Activation Steering Vectors for Domain Adaptation",
     "authors": [
@@ -276,109 +231,6 @@
     "figureSource": "https://aclanthology.org/2026.findings-acl.1931.pdf#page=1",
     "imageWidth": 896,
     "imageHeight": 904
-  },
-  {
-    "id": "finmmeval-overview",
-    "title": "Overview of FinMMEval 2026: Multilingual and Multimodal Financial Evaluation",
-    "authors": [
-      "Zhuohan Xie",
-      "Yuyang Dai",
-      "Rania Elbadry",
-      "Vanshikaa Jani",
-      "Xueqing Peng",
-      "Lingfei Qian",
-      "Georgi Georgiev",
-      "Dimitar Dimitrov",
-      "Fan Zhang",
-      "Jimin Huang",
-      "Jiahui Geng",
-      "Yankai Chen",
-      "Ye Yuan",
-      "Haolun Wu",
-      "Yuxia Wang",
-      "Ivan Koychev",
-      "Veselin Stoyanov",
-      "Mingzi Song",
-      "Yu Chen",
-      "Xue Liu",
-      "Preslav Nakov"
-    ],
-    "year": 2026,
-    "venue": "CLEF 2026",
-    "summary": "Reports the design and outcomes of shared evaluations covering multilingual financial questions and live trading agents.",
-    "image": "",
-    "imageAlt": "",
-    "paper": "https://link.springer.com/chapter/10.1007/978-3-032-39150-6_27",
-    "pdf": "",
-    "doi": "10.1007/978-3-032-39150-6_27",
-    "links": [
-      {
-        "label": "Lab",
-        "url": "https://mbzuai-nlp.github.io/CLEF-2026-FinMMEval-Lab/"
-      },
-      {
-        "label": "Code",
-        "url": "https://github.com/mbzuai-nlp/CLEF-2026-FinMMEval-Lab"
-      }
-    ],
-    "accepted": true,
-    "acceptanceSource": "https://link.springer.com/chapter/10.1007/978-3-032-39150-6_27",
-    "figureLabel": "",
-    "figureCaption": "",
-    "figureSource": "",
-    "figureUnavailableReason": "The Springer chapter is verified, but its original PDF and numbered figures were not publicly retrievable; retain a text-only publication row."
-  },
-  {
-    "id": "finmmeval-task1",
-    "title": "Overview of FinMMEval 2026 Task 1: Multilingual Financial Multiple-Choice Question Answering",
-    "authors": [
-      "Zhuohan Xie",
-      "Yuyang Dai",
-      "Rania Elbadry",
-      "Vanshikaa Jani",
-      "Georgi Georgiev",
-      "Dimitar Dimitrov",
-      "Fan Zhang",
-      "Xueqing Peng",
-      "Lingfei Qian",
-      "Jimin Huang",
-      "Jiahui Geng",
-      "Yankai Chen",
-      "Ye Yuan",
-      "Haolun Wu",
-      "Yuxia Wang",
-      "Ivan Koychev",
-      "Veselin Stoyanov",
-      "Mingzi Song",
-      "Yu Chen",
-      "Xue Liu",
-      "Preslav Nakov"
-    ],
-    "year": 2026,
-    "venue": "CLEF 2026 · Working Notes",
-    "summary": "Compares participating systems on financial multiple-choice questions in English, Chinese, Arabic, and Hindi.",
-    "image": "finmmeval-task1-table1.png",
-    "imageAlt": "Task 1 dataset table listing four languages, source resources, development and test sizes, and answer-option counts",
-    "paper": "https://arxiv.org/abs/2607.19856",
-    "pdf": "https://arxiv.org/pdf/2607.19856",
-    "arxiv": "2607.19856",
-    "links": [
-      {
-        "label": "Lab",
-        "url": "https://mbzuai-nlp.github.io/CLEF-2026-FinMMEval-Lab/"
-      },
-      {
-        "label": "Code",
-        "url": "https://github.com/mbzuai-nlp/CLEF-2026-FinMMEval-Lab"
-      }
-    ],
-    "accepted": true,
-    "acceptanceSource": "https://clef-staging.pages.dev/paper184.pdf",
-    "figureLabel": "Table 1 · Multilingual evaluation data",
-    "figureCaption": "The evaluation uses 200 test questions per language, with development sets and answer options varying by source.",
-    "figureSource": "https://arxiv.org/pdf/2607.19856#page=3",
-    "imageWidth": 1412,
-    "imageHeight": 304
   },
   {
     "id": "culture",
@@ -505,5 +357,153 @@
     "figureSource": "https://arxiv.org/pdf/2406.18120#page=6",
     "imageWidth": 1884,
     "imageHeight": 1120
+  },
+  {
+    "id": "finmmeval-overview",
+    "title": "Overview of FinMMEval 2026: Multilingual and Multimodal Financial Evaluation",
+    "authors": [
+      "Zhuohan Xie",
+      "Yuyang Dai",
+      "Rania Elbadry",
+      "Vanshikaa Jani",
+      "Xueqing Peng",
+      "Lingfei Qian",
+      "Georgi Georgiev",
+      "Dimitar Dimitrov",
+      "Fan Zhang",
+      "Jimin Huang",
+      "Jiahui Geng",
+      "Yankai Chen",
+      "Ye Yuan",
+      "Haolun Wu",
+      "Yuxia Wang",
+      "Ivan Koychev",
+      "Veselin Stoyanov",
+      "Mingzi Song",
+      "Yu Chen",
+      "Xue Liu",
+      "Preslav Nakov"
+    ],
+    "year": 2026,
+    "venue": "CLEF 2026",
+    "summary": "Reports the design and outcomes of shared evaluations covering multilingual financial questions and live trading agents.",
+    "image": "",
+    "imageAlt": "",
+    "paper": "https://link.springer.com/chapter/10.1007/978-3-032-39150-6_27",
+    "pdf": "",
+    "doi": "10.1007/978-3-032-39150-6_27",
+    "links": [
+      {
+        "label": "Lab",
+        "url": "https://mbzuai-nlp.github.io/CLEF-2026-FinMMEval-Lab/"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/mbzuai-nlp/CLEF-2026-FinMMEval-Lab"
+      }
+    ],
+    "accepted": true,
+    "acceptanceSource": "https://link.springer.com/chapter/10.1007/978-3-032-39150-6_27",
+    "figureLabel": "",
+    "figureCaption": "",
+    "figureSource": "",
+    "figureUnavailableReason": "The Springer chapter is verified, but its original PDF and numbered figures were not publicly retrievable; retain a text-only publication row."
+  },
+  {
+    "id": "finmmeval-task1",
+    "title": "Overview of FinMMEval 2026 Task 1: Multilingual Financial Multiple-Choice Question Answering",
+    "authors": [
+      "Zhuohan Xie",
+      "Yuyang Dai",
+      "Rania Elbadry",
+      "Vanshikaa Jani",
+      "Georgi Georgiev",
+      "Dimitar Dimitrov",
+      "Fan Zhang",
+      "Xueqing Peng",
+      "Lingfei Qian",
+      "Jimin Huang",
+      "Jiahui Geng",
+      "Yankai Chen",
+      "Ye Yuan",
+      "Haolun Wu",
+      "Yuxia Wang",
+      "Ivan Koychev",
+      "Veselin Stoyanov",
+      "Mingzi Song",
+      "Yu Chen",
+      "Xue Liu",
+      "Preslav Nakov"
+    ],
+    "year": 2026,
+    "venue": "CLEF 2026 · Working Notes",
+    "summary": "Compares participating systems on financial multiple-choice questions in English, Chinese, Arabic, and Hindi.",
+    "image": "finmmeval-task1-table1.png",
+    "imageAlt": "Task 1 dataset table listing four languages, source resources, development and test sizes, and answer-option counts",
+    "paper": "https://arxiv.org/abs/2607.19856",
+    "pdf": "https://arxiv.org/pdf/2607.19856",
+    "arxiv": "2607.19856",
+    "links": [
+      {
+        "label": "Lab",
+        "url": "https://mbzuai-nlp.github.io/CLEF-2026-FinMMEval-Lab/"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/mbzuai-nlp/CLEF-2026-FinMMEval-Lab"
+      }
+    ],
+    "accepted": true,
+    "acceptanceSource": "https://clef-staging.pages.dev/paper184.pdf",
+    "figureLabel": "Table 1 · Multilingual evaluation data",
+    "figureCaption": "The evaluation uses 200 test questions per language, with development sets and answer options varying by source.",
+    "figureSource": "https://arxiv.org/pdf/2607.19856#page=3",
+    "imageWidth": 1412,
+    "imageHeight": 304
+  },
+  {
+    "id": "finmmeval",
+    "title": "The CLEF-2026 FinMMEval Lab: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "authors": [
+      "Zhuohan Xie",
+      "Rania Elbadry",
+      "Fan Zhang",
+      "Georgi Georgiev",
+      "Xueqing Peng",
+      "Lingfei Qian",
+      "Jimin Huang",
+      "Dimitar Dimitrov",
+      "Vanshikaa Jani",
+      "Yuyang Dai",
+      "Jiahui Geng",
+      "Yuxia Wang",
+      "Ivan Koychev",
+      "Veselin Stoyanov",
+      "Preslav Nakov"
+    ],
+    "year": 2026,
+    "venue": "ECIR 2026",
+    "summary": "Shared evaluation tasks for financial AI, spanning question answering, multilingual understanding, and decision making across languages and modalities.",
+    "image": "finmmeval-table.png",
+    "imageAlt": "Original Table 1 showing languages covered by the three FinMMEval tasks",
+    "paper": "https://arxiv.org/abs/2602.10886",
+    "pdf": "https://arxiv.org/pdf/2602.10886",
+    "arxiv": "2602.10886",
+    "doi": "10.1007/978-3-032-21321-1_37",
+    "links": [
+      {
+        "label": "Code",
+        "url": "https://github.com/mbzuai-nlp/CLEF-2026-FinMMEval-Lab"
+      },
+      {
+        "label": "Project",
+        "url": "https://mbzuai-nlp.github.io/CLEF-2026-FinMMEval-Lab/"
+      }
+    ],
+    "figureLabel": "Table 1 · Languages and evaluation tasks",
+    "figureCaption": "The paper contains no figures; its original task-language coverage table is shown here.",
+    "figureSource": "https://arxiv.org/html/2602.10886v1#S2.T1",
+    "imageWidth": 1071,
+    "imageHeight": 285
   }
 ]
